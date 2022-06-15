@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./index.css">
+  <script src="./index.js"></script>
+  <title>Game</title>
+</head>
+
+<body>
+  <!-- details -->
+  <div>
+    <div style="border: 1px solid #000; width: 70vw; margin: auto">
+      <div style="margin: 20px 20px">
+        <div>
+          <p id="chat">Geben Sie Ihren Zug an</p>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <button style="width: 90vw; margin: 0em 1em" onclick="play(1)">
+            Schere
+          </button>
+          <button style="width: 90vw; margin: 0em 1em" onclick="play(2)">
+            Stein
+          </button>
+          <button style="width: 90vw; margin: 0em 1em" onclick="play(3)">
+            Papier
+          </button>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <h1>Gewonnen: <span id="winCount">0</span></h1>
+          <h1>Verloren: <span id="loseCount">0</span></h1>
+        </div>
+      </div>
+    </div>
+    <div id="modal" class="hidden">
+      <section class="modalSection">
+        <div class="modalBackground"></div>
+      </section>
+      <div class="modalContainer">
+        <div class="modalContainerGrid">
+          <div class="modalContainerBox">
+            <div id="insertModal">
+              <h1 id="end" class="modealContainerText"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
