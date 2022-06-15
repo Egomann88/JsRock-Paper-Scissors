@@ -33,16 +33,28 @@ function play(playerChoice) {
     default:
       reset();  // reset game
       alert('Das Spiel wurde gestoppt. Grund ist ein unbekannter Error'); // user error
-      console.error("Unbekannte Auswahl des Computers:", computerChoice); // dev error
+      console.error(
+        "%cUnbekannte Auswahl des Computers:",
+        'padding: 0.3em 0.3em; font-size: 1.2em; color: blue; font-weight: bold;',
+        computerChoice
+      ); // dev error
       break;
   }
 
   if (playerChoice === computerChoice) {
     chatMsg = "Unentschieden!";
-  } else if ((playerChoice === 1 && computerChoice === 3) || (playerChoice === 2 && computerChoice === 1) || (playerChoice === 3 && computerChoice === 2)) {  // gewonnen
+  } else if (
+    (playerChoice === 1 && computerChoice === 3) ||
+    (playerChoice === 2 && computerChoice === 1) ||
+    (playerChoice === 3 && computerChoice === 2)
+  ) {  // gewonnen
     chatMsg = "Gewonnen!" + chatMsg;
     winCounter++;
-  } else if (playerChoice === 1 && computerChoice === 2 || (playerChoice === 2 && computerChoice === 3) || (playerChoice === 3 && computerChoice === 1)) {  // verloren
+  } else if (
+    (playerChoice === 1 && computerChoice === 2) ||
+    (playerChoice === 2 && computerChoice === 3) ||
+    (playerChoice === 3 && computerChoice === 1)
+  ) {  // verloren
     chatMsg = "Verloren!" + chatMsg;
     loseCounter++;
   }
