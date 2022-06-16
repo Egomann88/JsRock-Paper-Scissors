@@ -56,9 +56,15 @@ body {
   padding: 12px 50px;
   border-radius: 3em;
   background-color: #9c9c9c;
+  overflow: hidden;
 }
 
-.modealContainerText {
+.modalContainerText {
   color: #FFFFFF;
   text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;
+}
+
+.boxContainer {
+  -webkit-box-shadow: 9px 8px 14px 13px rgba(0,0,0,0.31); 
+  box-shadow: 9px 8px 14px 13px rgba(0,0,0,0.31);
 }

@@ -70,7 +70,7 @@ function play(playerChoice) {
     setTimeout(() => {
       document.getElementById("modal").classList.toggle("hidden");
       reset();
-    }, 2000);
+    }, 3000);
   } else if (loseCounter >= 3) {
     document.getElementById("modal").classList.toggle("hidden");
     endMsg = "Sie haben Verloren!";
@@ -78,7 +78,7 @@ function play(playerChoice) {
     setTimeout(() => {
       document.getElementById("modal").classList.toggle("hidden");
       reset();
-    }, 2000);
+    }, 3000);
   }
 }
 
