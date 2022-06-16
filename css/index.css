@@ -59,6 +59,13 @@ button {
   justify-content: space-between;
 }
 
+.selectBox {
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin: 0.5em 0.5em;
+}
+
 .bg {
   min-height: 100vh;
   min-width: 100vh;
