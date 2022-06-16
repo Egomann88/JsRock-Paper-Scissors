@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/modal.css">
   <script src="./js/index.js"></script>
   <title>Game</title>
 </head>
@@ -13,29 +14,23 @@
 <body>
   <!-- details -->
   <div>
-    <div
-      style="border: 1px solid #000; width: 70vw; margin: auto; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 0em 0em;"
-      class="boxContainer">
-      <div style="margin: 20px 20px">
-        <div
-          style="padding: 0.5em 0.5em; text-align: center; font-size: 1.5em; letter-spacing: 0.25em; font-weight: bold;">
+    <div class="playBox boxContainer">
+      <div class="playBoxMargin">
+        <div class="chatBox">
           <p id="chat">Geben Sie Ihren Zug an</p>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 1em 0.5em;">
-          <button style="width: 90vw; margin: 0em 1em; padding: 0.5em 0em; font-size: 1.25em; font-weight: 500;"
-            onclick="play(1)">
+        <div class="buttonBox">
+          <button onclick="play(1)">
             Schere
           </button>
-          <button style="width: 90vw; margin: 0em 1em; padding: 0.5em 0em; font-size: 1.25em; font-weight: 500;"
-            onclick="play(2)">
+          <button onclick="play(2)">
             Stein
           </button>
-          <button style="width: 90vw; margin: 0em 1em; padding: 0.5em 0em; font-size: 1.25em; font-weight: 500;"
-            onclick="play(3)">
+          <button onclick="play(3)">
             Papier
           </button>
         </div>
-        <div style="display: flex; justify-content: space-between">
+        <div class="counterBox">
           <h1>Gewonnen: <span id="winCount">0</span></h1>
           <h1>Verloren: <span id="loseCount">0</span></h1>
         </div>
@@ -56,6 +51,7 @@
         </div>
       </div>
     </div>
+  </div>
 </body>
 
 </html>
