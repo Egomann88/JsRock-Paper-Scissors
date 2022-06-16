@@ -14,6 +14,7 @@ window.onload = () => {
   loseHtml = document.getElementById("loseCount");
   chatHtml = document.getElementById("chat");
   endHTML = document.getElementById("end");
+  changeBackground();
 };
 
 /* functionen */
@@ -96,7 +97,7 @@ function play(playerChoice) {
 }
 
 /**
- * Setz alle Variabeln und Anzeigen wieder auf den Standardwert
+ * Setzt alle Variabeln und Anzeigen wieder auf den Standardwert
  */
 function reset() {
   winCounter = 0;
@@ -107,4 +108,16 @@ function reset() {
   loseHtml.innerText = loseCounter;
   chatHtml.innerText = msg;
   endHTML.innerText = endMsg;
+}
+
+/**
+ * ändert den Hintergrund der Seite
+ * @param {number} bgId Id des Bg's auf den gewechselt werden soll (Standard: 1)
+ */
+function changeBackground(bgId = 1) {
+  for (let i = 1; i <= 5; i++) {  // alle bg-classes entfernen
+    document.getElementById("placeBg").classList.remove("b" + i);
+  }
+
+  document.getElementById("placeBg").classList.add("b" + bgId); // neuen bg hinzufügen
 }
