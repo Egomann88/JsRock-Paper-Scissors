@@ -87,3 +87,11 @@ button {
 .b5 {
   background-image: url("../assets/bg5.gif");
 }
+
+.b6 {
+  background-image: url("../assets/win.gif");
+}
+
+.b7 {
+  background-image: url("../assets/lose.gif");
+}

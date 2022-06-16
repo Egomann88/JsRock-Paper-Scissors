@@ -14,7 +14,9 @@ window.onload = () => {
   loseHtml = document.getElementById("loseCount");
   chatHtml = document.getElementById("chat");
   endHTML = document.getElementById("end");
-  changeBackground();
+  createLocalStorage(); // erstellt LS Variabeln (wenn nicht vorhanden)
+  changeBackground(); // wählt den Standarthintergrund aus
+  backgroundActivaded();  // prüft, ob die versteckten hintergründe aktiviert werden dürfen
 };
 
 /* functionen */
@@ -79,6 +81,11 @@ function play(playerChoice) {
     document.getElementById("modal").classList.toggle("hidden");  // modal öffnen
     document.getElementById("winGif").classList.toggle("hidden"); // Gewinner Gif einbleben
     endHTML.innerText = endMsg + "Gewonnen!"; // Gewonnen nachricht ausgeben
+    if (localStorage.getItem("WonGame", "0") == false) {  // wird max. 1. Mal angezeigt
+      localStorage.setItem("WonGame", "1"); // Gewinner Counter im LS ändern
+      backgroundActivaded();  // Hintergrund aktivieren
+      newBackground();  // neuer Hintergrund Meldung geben
+    }
     setTimeout(() => {
       document.getElementById("modal").classList.toggle("hidden");  // modal schliessen
       document.getElementById("winGif").classList.toggle("hidden"); // Gewinner Gif entfernen
@@ -88,6 +95,11 @@ function play(playerChoice) {
     document.getElementById("modal").classList.toggle("hidden");  // modal öffnen
     document.getElementById("loseGif").classList.toggle("hidden"); // verlierer Gif einbleben
     endHTML.innerText = endMsg + "Verloren!"; // verloren nachricht ausgeben
+    if (localStorage.getItem("LostGame", "0") == false) { // wird max. 1. Mal angezeigt
+      localStorage.setItem("LostGame", "1"); // Gewinner Counter im LS ändern
+      backgroundActivaded();  // Hintergrund aktivieren
+      newBackground();  // neuer Hintergrund Meldung geben
+    }
     setTimeout(() => {
       document.getElementById("modal").classList.toggle("hidden");  // modal schliessen
       document.getElementById("loseGif").classList.toggle("hidden"); // verlierer Gif entfernen
@@ -111,13 +123,44 @@ function reset() {
 }
 
 /**
+ * Überprüft, ob bereits gewonnen / verloren wurde, wenn ja werden die Hintergründe freigeschaltet
+ */
+async function backgroundActivaded() {
+  if (localStorage.getItem("WonGame", "1") == true)
+    document.getElementById("winOpt").classList.remove("hidden");
+  else
+    document.getElementById("winOpt").classList.add("hidden");
+
+  if (localStorage.getItem("LostGame", "1") == true)
+    document.getElementById("loseOpt").classList.remove("hidden");
+  else
+    document.getElementById("loseOpt").classList.add("hidden");
+}
+
+/**
+ * Überpruft, ob Einträge bereits im LS sind, wenn nicht, werden sie erstellt
+ */
+async function createLocalStorage() {
+  if (!localStorage.getItem("WonGame", "0"))  // wenn LS item nicht existiert, dann erstell eins
+    localStorage.setItem("WonGame", "0");
+  if (!localStorage.getItem("LostGame", "0"))  // wenn LS item nicht existiert, dann erstell eins
+    localStorage.setItem("LostGame", "0");
+}
+
+/**
  * ändert den Hintergrund der Seite
  * @param {number} bgId Id des Bg's auf den gewechselt werden soll (Standard: 1)
  */
-function changeBackground(bgId = 1) {
-  for (let i = 1; i <= 5; i++) {  // alle bg-classes entfernen
+async function changeBackground(bgId = 1) {
+  for (let i = 1; i <= 7; i++) {  // alle bg-classes entfernen
     document.getElementById("placeBg").classList.remove("b" + i);
   }
-
   document.getElementById("placeBg").classList.add("b" + bgId); // neuen bg hinzufügen
+}
+
+/**
+ * Gibt die Meldung einen neuen Hintergrund freigeschaltet zu haben
+ */
+async function newBackground() {
+  alert('Sie haben einen neuen Hintergrund freigeschaltet. (*^_^*)');
 }
