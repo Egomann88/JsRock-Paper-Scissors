@@ -1,0 +1,70 @@
+.animation-appear {
+  -webkit-animation:appear 1s ease 0s 1 normal;
+  -moz-animation:appear 1s ease 0s 1 normal;
+  -ms-animation:appear 1s ease 0s 1 normal;
+  animation:appear 1s ease 0s 1 normal;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1,1,1);
+    transform: scale3d(1,1,1);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+}
+
+.animation-in {
+  -webkit-animation:in 1.25s ease 0s 1 normal;
+  -moz-animation:in 1.25s ease 0s 1 normal;
+  -ms-animation:in 1.25s ease 0s 1 normal;
+  animation:in 1.25s ease 0s 1 normal;
+}
+
+@-webkit-keyframes in {
+  0% {
+    -webkit-transform: translateX(-70vw);
+    transform: translateX(-70vw);
+  }
+}
+
+@keyframes in {
+  0% {
+    transform: translateX(-70vw);
+  }
+}
+
+.animation-out {
+  -webkit-animation:out 1.25s ease 0s 1 normal;
+  -moz-animation:out 1.25s ease 0s 1 normal;
+  -ms-animation:out 1.25s ease 0s 1 normal;
+  animation:out 1.25s ease 0s 1 normal;
+}
+
+@-webkit-keyframes out {
+  100% {
+    -webkit-transform: translateX(-70vw);
+    transform: translateX(-70vw);
+  }
+}
+
+@keyframes out {
+  100% {
+    transform: translateX(-70vw);
+  }
+}

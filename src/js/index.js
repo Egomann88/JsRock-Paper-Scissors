@@ -1,3 +1,7 @@
+/********************************************************/
+// @autor Justin Urbanek
+/********************************************************/
+
 /* Globale Variabeln */
 let winHtml = "",
   loseHtml = "",
@@ -17,7 +21,9 @@ window.onload = () => {
   createLocalStorage(); // erstellt LS Variabeln (wenn nicht vorhanden)
   changeBackground(); // wählt den Standarthintergrund aus
   backgroundActivaded();  // prüft, ob die versteckten hintergründe aktiviert werden dürfen
+  achivementActivaded();  // prüft, welche Sterne aktiviert wurden
 };
+
 
 /* functionen */
 
@@ -126,15 +132,45 @@ function reset() {
  * Überprüft, ob bereits gewonnen / verloren wurde, wenn ja werden die Hintergründe freigeschaltet
  */
 async function backgroundActivaded() {
-  if (localStorage.getItem("WonGame", "1") == true)
+  if (localStorage.getItem("WonGame") == "1")
     document.getElementById("winOpt").classList.remove("hidden");
   else
     document.getElementById("winOpt").classList.add("hidden");
 
-  if (localStorage.getItem("LostGame", "1") == true)
+  if (localStorage.getItem("LostGame") == "1")
     document.getElementById("loseOpt").classList.remove("hidden");
   else
     document.getElementById("loseOpt").classList.add("hidden");
+
+  for (let i = 1; i <= 11; i++) { // Hintergrünge jedes Achivements
+    if (localStorage.getItem("Achivement" + i) == "1")
+      document.getElementById("Bg_Achivement" + i).classList.remove("hidden");
+    else
+      document.getElementById("Bg_Achivement" + i).classList.add("hidden");
+  }
+}
+
+/**
+ * Golden Wish Achivement
+ */
+async function goldenWish() {
+  if (localStorage.getItem("Achivement10") == "0") {
+    localStorage.setItem("Achivement10", "1");
+    location.reload(true);
+    newAchivement();
+    newBackground();
+  }
+}
+
+/**
+ * Prüft beim Laden der Seite, welche Achivments freigestaltet wurden und ändert den Stern entsprechet 
+ */
+async function achivementActivaded() {
+  for (let i = 1; i <= 11; i++) { // Hintergrünge jedes Achivements
+    if (localStorage.getItem("Achivement" + i) == "1")
+      document.getElementById("Achivement" + i).classList.add("starAchived"); // aktivierte classe hinzufügen
+    // sonst nichts tun
+  }
 }
 
 /**
@@ -145,6 +181,11 @@ async function createLocalStorage() {
     localStorage.setItem("WonGame", "0");
   if (!localStorage.getItem("LostGame", "0"))  // wenn LS item nicht existiert, dann erstell eins
     localStorage.setItem("LostGame", "0");
+
+  for (let i = 1; i <= 11; i++) { // achivement
+    if (!localStorage.getItem("Achivement" + i, "0"))  // wenn LS item nicht existiert, dann erstell eins
+      localStorage.setItem("Achivement" + i, "0");
+  }
 }
 
 /**
@@ -152,7 +193,7 @@ async function createLocalStorage() {
  * @param {number} bgId Id des Bg's auf den gewechselt werden soll (Standard: 1)
  */
 async function changeBackground(bgId = 1) {
-  for (let i = 1; i <= 7; i++) {  // alle bg-classes entfernen
+  for (let i = 1; i <= 18; i++) {  // alle bg-classes entfernen
     document.getElementById("placeBg").classList.remove("b" + i);
   }
   document.getElementById("placeBg").classList.add("b" + bgId); // neuen bg hinzufügen
@@ -163,4 +204,13 @@ async function changeBackground(bgId = 1) {
  */
 async function newBackground() {
   alert('Sie haben einen neuen Hintergrund freigeschaltet. (*^_^*)');
+}
+
+/**
+ * Gibt die Meldung ein Achivement bekommen zu haben
+ * @func newBackground jeder Erfolg gibt einen Hintergrund
+ */
+async function newAchivement() {
+  alert('Sie haben eine Erungenschaft erlangen. ( $ _ $ )');
+  newBackground();
 }

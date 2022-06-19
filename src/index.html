@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/modal.css">
+  <link rel="stylesheet" href="./css/animation.css">
   <link rel="icon" href="./assets/icon.jpg">
   <script src="./js/index.js"></script>
   <title>Schere, Stein, Papier</title>
@@ -15,6 +16,156 @@
 <body>
   <!-- details -->
   <div id="placeBg" class="bg ">
+    <div class="achivementContainer animation-in">
+      <h1>Achivements</h1>
+      <div class="achivementBox">
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement1" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Fünfacher Gewinner
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Fünfmal gewinnen
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement2" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Fünfacher Verlierer
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Fünfmal verlieren
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement2" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Tripple Kill
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Dreimal hintereinander gewinnen
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement3" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Feeding
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Dreimal hintereinander verlieren
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement4" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Strike
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Zehnmal hintereinander gewinnen
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement5" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Unbreakable Will
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Zehnmal hintereinander verlieren
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement6" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Champion
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            100 Mal gewinnen
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement7" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Fatality
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            100 Mal verlieren
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement8" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Pepe
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Versteckten Pege finden
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement9" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Pepe
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Versteckten Pege finden
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement10" class="star" onMouseOver="this.style.color='#ffd000'"
+              onMouseOut="this.style.color='black'" onclick="goldenWish()">&#9733;</div>
+            <div class="achivementTitle">
+              Golden Wish
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            -
+          </p>
+        </div>
+        <div class="achivement">
+          <div class="ach">
+            <div id="Achivement11" class="star">&#9733;</div>
+            <div class="achivementTitle">
+              Psychopath
+            </div>
+          </div>
+          <hr>
+          <p class="achivementDesc">
+            Alle Erfolge freischalten
+          </p>
+        </div>
+      </div>
+    </div>
     <div class="playBox boxContainer">
       <div class="playBoxMargin">
         <div class="selectBox">
@@ -27,6 +178,17 @@
             <option onclick="changeBackground(5)" value="Waterfall">Waterfall</option>
             <option onclick="changeBackground(6)" value="Winner" id="winOpt" class="hidden">Winner</option>
             <option onclick="changeBackground(7)" value="Loser" id="loseOpt" class="hidden">Loser</option>
+            <option onclick="changeBackground(8)" value="" id="Bg_Achivement1" class="hidden">Achivement 01</option>
+            <option onclick="changeBackground(9)" value="" id="Bg_Achivement2" class="hidden">Achivement 02</option>
+            <option onclick="changeBackground(10)" value="" id="Bg_Achivement3" class="hidden">Achivement 03</option>
+            <option onclick="changeBackground(11)" value="" id="Bg_Achivement4" class="hidden">Achivement 04</option>
+            <option onclick="changeBackground(12)" value="" id="Bg_Achivement5" class="hidden">Achivement 05</option>
+            <option onclick="changeBackground(13)" value="" id="Bg_Achivement6" class="hidden">Achivement 06</option>
+            <option onclick="changeBackground(14)" value="" id="Bg_Achivement7" class="hidden">Achivement 07</option>
+            <option onclick="changeBackground(15)" value="" id="Bg_Achivement8" class="hidden">Achivement 08</option>
+            <option onclick="changeBackground(16)" value="" id="Bg_Achivement9" class="hidden">Achivement 09</option>
+            <option onclick="changeBackground(17)" value="" id="Bg_Achivement10" class="hidden">Achivement 10</option>
+            <option onclick="changeBackground(18)" value="" id="Bg_Achivement11" class="hidden">Achivement 11</option>
           </select>
         </div>
         <div class="chatBox">
@@ -49,12 +211,13 @@
         </div>
       </div>
     </div>
+
     <div id="modal" class="hidden">
       <section class="modalSection">
         <div class="modalBackground"></div>
       </section>
       <div class="modalContainer">
-        <div class="modalContainerGrid">
+        <div class="modalContainerGrid animation-appear">
           <div class="modalContainerBox">
             <h1 id="end" class="modalContainerText"></h1>
             <img id="loseGif" src="./assets/lose.gif" alt="" class="modalImgBorder hidden">
