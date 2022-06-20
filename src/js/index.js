@@ -24,6 +24,12 @@ window.onload = () => {
   achivementActivaded();  // prüft, welche Sterne aktiviert wurden
 };
 
+let winCounterTotal = localStorage.getItem("WinCounterTotal"),
+  loseCountTotal = localStorage.getItem("LoseCounterTotal"),
+  WinsInRow = localStorage.getItem("WinsInRow"),
+  LosesInRow = localStorage.getItem("LosesInRow");
+
+
 
 /* functionen */
 
@@ -126,6 +132,12 @@ function reset() {
   loseHtml.innerText = loseCounter;
   chatHtml.innerText = msg;
   endHTML.innerText = endMsg;
+}
+
+function achivementChecker() {
+  if (false) {
+
+  }
 }
 
 /**
