@@ -3,15 +3,16 @@
 /********************************************************/
 
 /* Globale Variabeln */
-let winHtml = "",
-  loseHtml = "",
-  chatHtml = "",
-  endHTML = "",
-  winCounter = 0,
-  loseCounter = 0,
-  chatMsg = "",
-  endMsg = "Sie haben ",
-  toggleAchivements = false;
+let winHtml = "", // HTML Element für Win zähler
+  loseHtml = "",  // HTML Element für Verloren zähler
+  chatHtml = "",  // HTML Element für Informationstext
+  endHTML = "", // HTML Element für Endausgabe
+  winCounter = 0, // zählt wie oft man gewonnen hat (nicht permanent)
+  loseCounter = 0,  // zählt wie oft man verloren hat (nicht permanent)
+  chatMsg = "", // msg in der mitte
+  endMsg = "Sie haben ",  // Sie haben gewonnen / verloren
+  toggleAchivements = false,  // um dne Achivements-Container anzuzeigen
+  togglePlayBoxBg = false;  // um den hintergrund der playBox zu versteken
 
 /* init function */
 window.onload = () => {
