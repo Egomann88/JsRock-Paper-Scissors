@@ -30,41 +30,41 @@
 }
 
 .animation-in {
-  -webkit-animation:in 1.25s ease 0s 1 normal;
-  -moz-animation:in 1.25s ease 0s 1 normal;
-  -ms-animation:in 1.25s ease 0s 1 normal;
-  animation:in 1.25s ease 0s 1 normal;
+  -webkit-animation:in 1s ease 0s 1 normal;
+  -moz-animation:in 1s ease 0s 1 normal;
+  -ms-animation:in 1s ease 0s 1 normal;
+  animation:in 1s ease 0s 1 normal;
 }
 
 @-webkit-keyframes in {
   0% {
-    -webkit-transform: translateX(-70vw);
-    transform: translateX(-70vw);
+    -webkit-transform: translate(-100vw, -30vh);
+    transform: translate(-100vw, -30vh);
   }
 }
 
 @keyframes in {
   0% {
-    transform: translateX(-70vw);
+    transform: translate(-100vw, -30vh);
   }
 }
 
 .animation-out {
-  -webkit-animation:out 1.25s ease 0s 1 normal;
-  -moz-animation:out 1.25s ease 0s 1 normal;
-  -ms-animation:out 1.25s ease 0s 1 normal;
-  animation:out 1.25s ease 0s 1 normal;
+  -webkit-animation:out 1s ease 0s 1 normal;
+  -moz-animation:out 1s ease 0s 1 normal;
+  -ms-animation:out 1s ease 0s 1 normal;
+  animation:out 1s ease 0s 1 normal;
 }
 
 @-webkit-keyframes out {
   100% {
-    -webkit-transform: translateX(-70vw);
-    transform: translateX(-70vw);
+    -webkit-transform: translate(-100vw, -30vh);
+    transform: translate(-100vw, -30vh);
   }
 }
 
 @keyframes out {
   100% {
-    transform: translateX(-70vw);
+    transform: translate(-100vw, -30vh);
   }
 }
