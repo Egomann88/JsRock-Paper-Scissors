@@ -159,8 +159,13 @@
         </div>
       </div>
     </div>
-    <div class="playBox boxContainer">
+    <div id="playBox" class="playBox boxContainer ">
       <div class="playBoxMargin">
+        <div class="deactivateBackground">
+          <!-- deactivateBackgroundButton wird nicht genutzt -->
+          <button class="deactivateBackgroundButton" onclick="deactivateBackground()">Hintergrund <span
+              id="deactivateBackground">deaktivieren</span></button>
+        </div>
         <div class="selectBox">
           <select name="backgrounds" id="backgrounds">
             <option value="Placeholder">Hintergrund wählen:</option>

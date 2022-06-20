@@ -311,8 +311,8 @@ async function newAchivement() {
  * öffnet den Achivement Contianer
  */
 async function openAchivements() {
-  toggleAchivements = !toggleAchivements;
   let time = 0;
+  toggleAchivements = !toggleAchivements;
   if (toggleAchivements)
     time = 0;
   else
@@ -323,4 +323,19 @@ async function openAchivements() {
   setTimeout(() => {
     document.getElementById("achivementContainer").classList.toggle("hidden");
   }, time);
+}
+
+/**
+ * de- oder aktiviert den hintergrund der Spielbox
+ * https://stackoverflow.com/questions/197748/how-do-i-change-the-background-color-with-javascript
+ * https://stackoverflow.com/questions/8860654/javascript-single-line-if-statement-best-syntax-this-alternative
+ */
+async function deactivateBackground() {
+  togglePlayBoxBg = !togglePlayBoxBg;
+  document.getElementById("deactivateBackground").innerHTML = togglePlayBoxBg ? 'aktivieren' : 'deaktivieren';  // text vom button entsprechend ändern
+  document.getElementById("playBox").classList.remove(togglePlayBoxBg ? 'animation-fadein' : 'animation-fadeout');  // vorherige animation löschen
+  document.getElementById("playBox").classList.add(togglePlayBoxBg ? 'animation-fadeout' : 'animation-fadein'); // fadein oder -out einfügen
+  setTimeout(() => {  // auf animation warten
+    document.getElementById("playBox").style.background = togglePlayBoxBg ? 'transparent' : '#fff'; // hintergrund ädern
+  }, 900);
 }

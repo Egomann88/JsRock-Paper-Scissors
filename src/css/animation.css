@@ -68,3 +68,50 @@
     transform: translate(-100vw, -30vh);
   }
 }
+
+.animation-fadein {
+  -webkit-animation:fadein 1.5s ease 0s 1 normal;
+  -moz-animation:fadein 1.5s ease 0s 1 normal;
+  -ms-animation:fadein 1.5s ease 0s 1 normal;
+  animation:fadein 1.5s ease 0s 1 normal;
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    -webkit-background-origin: transparent;
+    background-color: transparent;
+  }
+  100% {
+    -webkit-background-origin: #fff;
+    background-color: #fff;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+.animation-fadeout {
+  -webkit-animation:fadeout 1s ease 0s 1 normal;
+  -moz-animation:fadeout 1s ease 0s 1 normal;
+  -ms-animation:fadeout 1s ease 0s 1 normal;
+  animation:fadeout 1s ease 0s 1 normal;
+}
+
+@-webkit-keyframes fadeout {
+  100% {
+    -webkit-background-origin: transparent;
+    background-color: transparent;
+  }
+}
+
+@keyframes fadeout {
+  100% {
+    background-color: transparent;
+  }
+}
