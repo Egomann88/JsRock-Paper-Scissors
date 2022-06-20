@@ -16,14 +16,19 @@
 <body>
   <!-- details -->
   <div id="placeBg" class="bg ">
-    <div class="achivementContainer animation-in">
+    <div class="achivementsButtonContainer">
+      <button class="achivementsButton" onclick="openAchivements()">
+        >
+      </button>
+    </div>
+    <div id="achivementContainer" class="achivementContainer animation-out hidden">
       <h1>Achivements</h1>
       <div class="achivementBox">
         <div class="achivement">
           <div class="ach">
             <div id="Achivement1" class="star">&#9733;</div>
             <div class="achivementTitle">
-              Fünfacher Gewinner
+              Genius
             </div>
           </div>
           <hr>
@@ -35,7 +40,7 @@
           <div class="ach">
             <div id="Achivement2" class="star">&#9733;</div>
             <div class="achivementTitle">
-              Fünfacher Verlierer
+              Death is not Permanent
             </div>
           </div>
           <hr>
@@ -45,9 +50,9 @@
         </div>
         <div class="achivement">
           <div class="ach">
-            <div id="Achivement2" class="star">&#9733;</div>
+            <div id="Achivement3" class="star">&#9733;</div>
             <div class="achivementTitle">
-              Tripple Kill
+              on Fire
             </div>
           </div>
           <hr>
@@ -57,9 +62,9 @@
         </div>
         <div class="achivement">
           <div class="ach">
-            <div id="Achivement3" class="star">&#9733;</div>
+            <div id="Achivement4" class="star">&#9733;</div>
             <div class="achivementTitle">
-              Feeding
+              Bonefire
             </div>
           </div>
           <hr>
@@ -69,7 +74,7 @@
         </div>
         <div class="achivement">
           <div class="ach">
-            <div id="Achivement4" class="star">&#9733;</div>
+            <div id="Achivement5" class="star">&#9733;</div>
             <div class="achivementTitle">
               Strike
             </div>
@@ -81,7 +86,7 @@
         </div>
         <div class="achivement">
           <div class="ach">
-            <div id="Achivement5" class="star">&#9733;</div>
+            <div id="Achivement6" class="star">&#9733;</div>
             <div class="achivementTitle">
               Unbreakable Will
             </div>
@@ -93,7 +98,7 @@
         </div>
         <div class="achivement">
           <div class="ach">
-            <div id="Achivement6" class="star">&#9733;</div>
+            <div id="Achivement7" class="star">&#9733;</div>
             <div class="achivementTitle">
               Champion
             </div>
@@ -105,7 +110,7 @@
         </div>
         <div class="achivement">
           <div class="ach">
-            <div id="Achivement7" class="star">&#9733;</div>
+            <div id="Achivement8" class="star">&#9733;</div>
             <div class="achivementTitle">
               Fatality
             </div>
@@ -113,18 +118,6 @@
           <hr>
           <p class="achivementDesc">
             100 Mal verlieren
-          </p>
-        </div>
-        <div class="achivement">
-          <div class="ach">
-            <div id="Achivement8" class="star">&#9733;</div>
-            <div class="achivementTitle">
-              Pepe
-            </div>
-          </div>
-          <hr>
-          <p class="achivementDesc">
-            Versteckten Pege finden
           </p>
         </div>
         <div class="achivement">
@@ -178,30 +171,37 @@
             <option onclick="changeBackground(5)" value="Waterfall">Waterfall</option>
             <option onclick="changeBackground(6)" value="Winner" id="winOpt" class="hidden">Winner</option>
             <option onclick="changeBackground(7)" value="Loser" id="loseOpt" class="hidden">Loser</option>
-            <option onclick="changeBackground(8)" value="" id="Bg_Achivement1" class="hidden">Achivement 01</option>
-            <option onclick="changeBackground(9)" value="" id="Bg_Achivement2" class="hidden">Achivement 02</option>
-            <option onclick="changeBackground(10)" value="" id="Bg_Achivement3" class="hidden">Achivement 03</option>
-            <option onclick="changeBackground(11)" value="" id="Bg_Achivement4" class="hidden">Achivement 04</option>
-            <option onclick="changeBackground(12)" value="" id="Bg_Achivement5" class="hidden">Achivement 05</option>
-            <option onclick="changeBackground(13)" value="" id="Bg_Achivement6" class="hidden">Achivement 06</option>
-            <option onclick="changeBackground(14)" value="" id="Bg_Achivement7" class="hidden">Achivement 07</option>
-            <option onclick="changeBackground(15)" value="" id="Bg_Achivement8" class="hidden">Achivement 08</option>
-            <option onclick="changeBackground(16)" value="" id="Bg_Achivement9" class="hidden">Achivement 09</option>
-            <option onclick="changeBackground(17)" value="" id="Bg_Achivement10" class="hidden">Achivement 10</option>
-            <option onclick="changeBackground(18)" value="" id="Bg_Achivement11" class="hidden">Achivement 11</option>
+            <option onclick="changeBackground(8)" value="Genius" id="Bg_Achivement1" class="hidden">Genius
+            </option>
+            <option onclick="changeBackground(9)" value="Death is not Permanent" id="Bg_Achivement2" class="hidden">
+              Death is not Permanent
+            </option>
+            <option onclick="changeBackground(10)" value="on Fire" id="Bg_Achivement3" class="hidden">on Fire
+            </option>
+            <option onclick="changeBackground(11)" value="Bonefire" id="Bg_Achivement4" class="hidden">Bonefire</option>
+            <option onclick="changeBackground(12)" value="Strike" id="Bg_Achivement5" class="hidden">Strike</option>
+            <option onclick="changeBackground(13)" value="Unbreakable Will" id="Bg_Achivement6" class="hidden">
+              Unbreakable Will</option>
+            <option onclick="changeBackground(14)" value="Champion" id="Bg_Achivement7" class="hidden">Champion</option>
+            <option onclick="changeBackground(15)" value="Fatality" id="Bg_Achivement8" class="hidden">Fatality</option>
+            <option onclick="changeBackground(16)" value="Pepe" id="Bg_Achivement9" class="hidden">Pepe</option>
+            <option onclick="changeBackground(17)" value="Golden Wish" id="Bg_Achivement10" class="hidden">Golden Wish
+            </option>
+            <option onclick="changeBackground(18)" value="Psychopath" id="Bg_Achivement11" class="hidden">Psychopath
+            </option>
           </select>
         </div>
         <div class="chatBox">
           <p id="chat">Geben Sie Ihren Zug an</p>
         </div>
         <div class="buttonBox">
-          <button onclick="play(1)">
+          <button class="playButton" onclick="play(1)">
             Schere
           </button>
-          <button onclick="play(2)">
+          <button class="playButton" onclick="play(2)">
             Stein
           </button>
-          <button onclick="play(3)">
+          <button class="playButton" onclick="play(3)">
             Papier
           </button>
         </div>
