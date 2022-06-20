@@ -7,7 +7,7 @@ body {
   overflow-y: hidden;
 }
 
-button {
+.playButton {
   width: 90vw;
   margin: 0em 1em;
   font-weight: 500;
@@ -185,4 +185,48 @@ button {
 
 .b7 {
   background-image: url("../assets/lose.gif");
+}
+
+.b8 {
+  background-image: url("../assets/bg8.jpg");
+}
+
+.b9 {
+  background-image: url("../assets/bg9.gif");
+}
+
+.b10 {
+  background-image: url("../assets/bg10.gif");
+}
+
+.b11 {
+  background-image: url("../assets/bg11.gif");
+}
+
+.b12 {
+  background-image: url("../assets/bg12.gif");
+}
+
+.b13 {
+  background-image: url("../assets/bg13.gif");
+}
+
+.b14 {
+  background-image: url("../assets/bg14.gif");
+}
+
+.b15 {
+  background-image: url("../assets/bg15.gif");
+}
+
+.b16 {
+  background-image: url("../assets/bg16.gif");
+}
+
+.b17 {
+  background-image: url("../assets/bg17.gif");
+}
+
+.b18 {
+  background-image: url("../assets/bg18.jpg");
 }
