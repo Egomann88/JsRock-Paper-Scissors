@@ -24,6 +24,7 @@ window.onload = () => {
   changeBackground(); // wählt den Standarthintergrund aus
   backgroundActivaded();  // prüft, ob die versteckten hintergründe aktiviert werden dürfen
   achivementActivaded();  // prüft, welche Sterne aktiviert wurden
+  placePege();
 };
 
 /* Achivement-Variabeln */
@@ -292,22 +293,6 @@ async function changeBackground(bgId = 1) {
 }
 
 /**
- * Gibt die Meldung einen neuen Hintergrund freigeschaltet zu haben
- */
-async function newBackground() {
-  alert('Sie haben einen neuen Hintergrund freigeschaltet. (*^_^*)');
-}
-
-/**
- * Gibt die Meldung ein Achivement bekommen zu haben
- * @func newBackground jeder Erfolg gibt einen Hintergrund
- */
-async function newAchivement() {
-  alert('Sie haben eine Erungenschaft erlangen. ( $ _ $ )');
-  newBackground();
-}
-
-/**
  * öffnet den Achivement Contianer
  */
 async function openAchivements() {
@@ -333,9 +318,44 @@ async function openAchivements() {
 async function deactivateBackground() {
   togglePlayBoxBg = !togglePlayBoxBg;
   document.getElementById("deactivateBackground").innerHTML = togglePlayBoxBg ? 'aktivieren' : 'deaktivieren';  // text vom button entsprechend ändern
-  document.getElementById("playBox").classList.remove(togglePlayBoxBg ? 'animation-fadein' : 'animation-fadeout');  // vorherige animation löschen
+  document.getElementById("playBox").classList.remove(togglePlayBoxBg ? 'animation-fadein' : 'animation-fadeout');  // vorherige animation entfernen
   document.getElementById("playBox").classList.add(togglePlayBoxBg ? 'animation-fadeout' : 'animation-fadein'); // fadein oder -out einfügen
   setTimeout(() => {  // auf animation warten
     document.getElementById("playBox").style.background = togglePlayBoxBg ? 'transparent' : '#fff'; // hintergrund ädern
   }, 900);
+}
+
+/**
+ * platziert pepe zufällig auf der Seite
+ */
+async function placePege() {
+  // kann nicht max height nehmen, sonst verschwindet  
+  document.getElementById("AchivementPege").style.top = Math.round(Math.random() * screen.height * 0.8).toString() + "px";
+  document.getElementById("AchivementPege").style.left = Math.round(Math.random() * screen.width * 0.8).toString() + "px";
+}
+
+/**
+ * aktivert pepe-Achivement und läst ihn verschwinden
+ */
+async function aktivadePage() {
+  if (localStorage.getItem("Achivement9") == "0")
+    newAchivement();
+  document.getElementById("AchivementPege").style.display = "none";
+  localStorage.setItem("Achivement9", "1");
+}
+
+/**
+ * Gibt die Meldung einen neuen Hintergrund freigeschaltet zu haben
+ */
+async function newBackground() {
+  alert('Sie haben einen neuen Hintergrund freigeschaltet. (*^_^*)');
+}
+
+/**
+ * Gibt die Meldung ein Achivement bekommen zu haben
+ * @func newBackground jeder Erfolg gibt einen Hintergrund
+ */
+async function newAchivement() {
+  alert('Sie haben eine Erungenschaft erlangen. ( $ _ $ )');
+  newBackground();
 }

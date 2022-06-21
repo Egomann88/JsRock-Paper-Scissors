@@ -16,6 +16,8 @@
 <body>
   <!-- details -->
   <div id="placeBg" class="bg ">
+    <img id="AchivementPege" src="./assets/pepe.gif" alt="" class="achivementPege" width="16px" height="12px"
+      onclick="aktivadePage()" />
     <div class="achivementsButtonContainer">
       <button class="achivementsButton" onclick="openAchivements()">
         >
@@ -135,7 +137,8 @@
         <div class="achivement">
           <div class="ach">
             <div id="Achivement10" class="star" onMouseOver="this.style.color='#ffd000'"
-              onMouseOut="this.style.color='black'" onclick="goldenWish()">&#9733;</div>
+              onMouseOut="localStorage.getItem('Achivement10') == '0' ? this.style.color='black' : this.style.color='#ffd000'"
+              onclick="goldenWish()">&#9733;</div>
             <div class="achivementTitle">
               Golden Wish
             </div>
