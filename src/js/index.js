@@ -203,7 +203,8 @@ function achivementChecker() {
     localStorage.getItem("Achivement7") == "1" &&
     localStorage.getItem("Achivement8") == "1" &&
     localStorage.getItem("Achivement9") == "1" &&
-    localStorage.getItem("Achivement10") == "1"
+    localStorage.getItem("Achivement10") == "1" &&
+    localStorage.getItem("Achivement11") == "0"
   ) {
     localStorage.setItem("Achivement11", "1");
     newAchivement();
