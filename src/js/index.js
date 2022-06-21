@@ -303,6 +303,7 @@ async function openAchivements() {
   else
     time = 900;
 
+  document.getElementById("achivementsButton").innerHTML = toggleAchivements ? "<" : ">";
   document.getElementById("achivementContainer").classList.toggle("animation-out");
   document.getElementById("achivementContainer").classList.toggle("animation-in");
   setTimeout(() => {
